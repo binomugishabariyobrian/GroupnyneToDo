@@ -1,27 +1,21 @@
+
 <table>
   <tr>
     <th>
       Item
     </th>
   </tr>
-  {%
-  for
-  task
-  in
-  tasks
-  %}
+  {% for task in tasks %}
   <tr>
     <td>
-      {{task.title}}
+      {{ task.title }}
     </td>
   </tr>
-  {%
-  empty
-  %}
-  <h3>
-    nothing
-  </h3>
-  {%
-  endfor
-  %}
+  {% empty %}
+  <tr>
+    <td>
+      Nothing
+    </td>
+  </tr>
+  {% endfor %}
 </table>
