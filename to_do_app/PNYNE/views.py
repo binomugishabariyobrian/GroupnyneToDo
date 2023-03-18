@@ -9,3 +9,5 @@ class TaskList(ListView):
     
 class TaskDetail(DetailView):
     model = Task
+    contect_object_name = 'tasks'
+    template_name = 'PNYNE/task.html'
