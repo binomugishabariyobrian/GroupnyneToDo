@@ -1,19 +1,25 @@
+<h1>My To Do List</h1>
+
 <table>
   <tr>
     <th>
-      Item
+      Items
     </th>
+    <th></th>
   </tr>
   {% for task in tasks %}
   <tr>
     <td>
-      {{ task.title }}
+      {{task.title}}
     </td>
+    <!-- <td>
+      <a href="{% url 'task' task.id %}">View</a>
+    </td> -->
   </tr>
   {% empty %}
   <tr>
     <td>
-      Nothing
+     No items in To Do list
     </td>
   </tr>
   {% endfor %}
