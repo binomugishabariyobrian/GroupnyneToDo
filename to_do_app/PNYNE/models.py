@@ -15,6 +15,7 @@ class Task(models.Model):
 
 
 
+
     def _str_(self):#human readable string representation of task
         return self.title
     class Meta:
@@ -22,7 +23,7 @@ class Task(models.Model):
 
     def mark_as_complete(self):
         self.complete = True
-        self.completed_date = datetime.now()
+        self.completed_date = timezone.now()
         self.save()
 
     def mark_as_incomplete(self):
