@@ -17,3 +17,7 @@ def signup(request):
 def signout(request):
     logout(request)
     return redirect('/')
+
+def task(request):
+    return render(request, 'task/task.html')
+

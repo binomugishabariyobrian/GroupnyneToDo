@@ -1,18 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'main/main.html' %} {% load static %} {% block content %} <br />
+{% include 'task/base.html' %}
 
-{% block content %}
-  <h1>{{ task.title }}</h1>
-  <p><strong>Description:</strong> {{ task.description }}</p>
-  <p><strong>Priority:</strong> {{ task.priority }}</p>
-  <p><strong>Due Date:</strong> {{ task.due_date }}</p>
-  <p><strong>Created:</strong> {{ task.created }}</p>
-  {% if task.complete %}
+<title>Add Task</title>
+<div class="container">
+  <div class="row">
+    <h1>{{ task.title }}</h1>
+    <p><strong>Description:</strong> {{ task.description }}</p>
+    <p><strong>Priority:</strong> {{ task.priority }}</p>
+    <p><strong>Due Date:</strong> {{ task.due_date }}</p>
+    <p><strong>Created:</strong> {{ task.created }}</p>
+    {% if task.complete %}
     <p><strong>Completed:</strong> {{ task.completed_date }}</p>
-  {% endif %}
-  <form method="post" action="{% url 'task_update' task.id %}">
-    {% csrf_token %}
-    <input type="checkbox" name="complete" {% if task.complete %}checked{% endif %}>
-    <label for="complete">Complete</label>
-    <button type="submit">Update</button>
-  </form>
+    {% endif %}
+    <form method="post" action="">
+      {% csrf_token %}
+      <input type="checkbox" name="complete" {% if task.complete %}checked{% endif %} />
+      <label for="complete">Complete</label>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>
 {% endblock %}
